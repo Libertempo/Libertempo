@@ -34,7 +34,7 @@
         "ext-curl": "*",
         "kint-php/kint": "3.2.2",
         "phpmailer/phpmailer": "6.0.7",
-        "tecnickcom/tcpdf": "6.3.2",
+        "tecnickcom/tcpdf": "6.4.1",
         "jasig/phpcas": "1.3.8",
         "yohang/calendr": "^2.0",
         "guzzlehttp/guzzle": "6.5.2",
