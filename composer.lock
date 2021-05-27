@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e1be9d73109cd03d9736c6f9031ef52f",
+    "content-hash": "debef7c255ef4bad8b750339e245878d",
     "packages": [
         {
             "name": "adldap2/adldap2",
@@ -3402,16 +3402,16 @@
     "packages-dev": [
         {
             "name": "atoum/atoum",
-            "version": "3.4.1",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/atoum/atoum.git",
-                "reference": "35714b3044ccbfea6d9d78a7a7107347ee1b5ce9"
+                "reference": "56e9c55cab42086c2eb6bd30fcf1e242f9c51f52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/atoum/atoum/zipball/35714b3044ccbfea6d9d78a7a7107347ee1b5ce9",
-                "reference": "35714b3044ccbfea6d9d78a7a7107347ee1b5ce9",
+                "url": "https://api.github.com/repos/atoum/atoum/zipball/56e9c55cab42086c2eb6bd30fcf1e242f9c51f52",
+                "reference": "56e9c55cab42086c2eb6bd30fcf1e242f9c51f52",
                 "shasum": ""
             },
             "require": {
@@ -3419,7 +3419,7 @@
                 "ext-json": "*",
                 "ext-tokenizer": "*",
                 "ext-xml": "*",
-                "php": "^5.6.0 || ^7.0.0 <7.5.0"
+                "php": "^7.2 || ^8.0"
             },
             "replace": {
                 "mageekguy/atoum": "*"
@@ -3438,7 +3438,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.x-dev"
+                    "dev-master": "4.x-dev"
                 }
             },
             "autoload": {
@@ -3483,9 +3483,9 @@
             ],
             "support": {
                 "issues": "https://github.com/atoum/atoum/issues",
-                "source": "https://github.com/atoum/atoum/tree/3.4.1"
+                "source": "https://github.com/atoum/atoum/tree/4.0.0"
             },
-            "time": "2020-01-22T14:16:11+00:00"
+            "time": "2020-11-21T17:23:11+00:00"
         },
         {
             "name": "codacy/coverage",
