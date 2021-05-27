@@ -44,7 +44,7 @@
     "require-dev": {
         "atoum/atoum": "3.4.1",
         "codacy/coverage": "1.4.2",
-        "phpstan/phpstan": "0.11.5",
+        "phpstan/phpstan": "0.12.85",
         "phpunit/php-code-coverage" : "9.2.6"
     }
 }
