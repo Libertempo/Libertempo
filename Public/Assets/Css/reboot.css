@@ -675,7 +675,7 @@ tr.calendrier-separator {
 }
 
 #manageUser .suggestions {
-	width:100px;position:absolute;margin:-6px auto 0;padding:0;list-style-type:none;border:1px solid #d5d4d4;background:#fff;display: none;
+	position:absolute;margin:-6px auto 0;padding:0;list-style-type:none;border:1px solid #d5d4d4;background:#fff;display: none;
 	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:13px;color:#555;
 	-border-radius:2px;
 	-webkit-border-radius:2px;
