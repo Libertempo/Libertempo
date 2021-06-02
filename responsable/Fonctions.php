@@ -424,20 +424,12 @@ class Fonctions
             $i = true;
             while ($resultat3 = $ReqLog3->fetch_array()) {
                 $sql_login=$resultat3["p_login"] ;
-                $sql_date_deb=eng_date_to_fr($resultat3["p_date_deb"]);
+                $sql_date_deb=$resultat3["p_date_deb"];
                 $sql_demi_jour_deb=$resultat3["p_demi_jour_deb"] ;
-                if ($sql_demi_jour_deb=="am") {
-                    $demi_j_deb =  _('divers_am_short');
-                } else {
-                    $demi_j_deb =  _('divers_pm_short');
-                }
-                $sql_date_fin=eng_date_to_fr($resultat3["p_date_fin"]);
+                $demi_j_deb = ($sql_demi_jour_deb == "am") ? 'matin' : 'après-midi';
+                $sql_date_fin=$resultat3["p_date_fin"];
                 $sql_demi_jour_fin=$resultat3["p_demi_jour_fin"] ;
-                if ($sql_demi_jour_fin=="am") {
-                    $demi_j_fin =  _('divers_am_short');
-                } else {
-                    $demi_j_fin =  _('divers_pm_short');
-                }
+                $demi_j_fin = ($sql_demi_jour_fin == "am") ? 'matin' : 'après-midi';
                 $sql_nb_jours=affiche_decimal($resultat3["p_nb_jours"]);
                 $sql_commentaire=$resultat3["p_commentaire"] ;
                 $sql_type=$resultat3["p_type"] ;
@@ -469,8 +461,8 @@ class Fonctions
                 }
 
                 $return .= '<tr class="' . ($i ? 'i' : 'p') . '">';
-                $return .= '<td>' . $sql_date_deb . '_' . $demi_j_deb . '</td>';
-                $return .= '<td>' . $sql_date_fin . '_' . $demi_j_fin . '</td>';
+                $return .= '<td>' . \App\Helpers\Formatter::dateIso2Fr($sql_date_deb) .' <span class="demi">' . schars($demi_j_deb) . '</span></td>';
+                $return .= '<td>' . \App\Helpers\Formatter::dateIso2Fr($sql_date_fin) .' <span class="demi">' . schars($demi_j_deb) . '</span></td>';
                 $return .= '<td>' . $sql_nb_jours . '</td>';
                 $return .= '<td>' . $sql_commentaire . '</td>';
                 $return .= '<td>' . $tab_types_abs[$sql_type]['libelle'] . '</td>';

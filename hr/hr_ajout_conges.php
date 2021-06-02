@@ -187,7 +187,7 @@ if ('true' === $ajout_conges) {
 
 if ('true' === $ajout_global) {
     $tab_new_nb_conges_all = getpost_variable('tab_new_nb_conges_all');
-    $tab_calcul_proportionnel = getpost_variable('tab_calcul_proportionnel');
+    $tab_calcul_proportionnel = getpost_variable('tab_calcul_proportionnel', array());
     $tab_new_comment_all = getpost_variable('tab_new_comment_all');
 
     ajout_global($tab_new_nb_conges_all, $tab_calcul_proportionnel, $tab_new_comment_all, $_SESSION['userlogin']);
@@ -196,7 +196,7 @@ if ('true' === $ajout_global) {
 
 if ('true' === $ajout_groupe) {
     $tab_new_nb_conges_all = getpost_variable('tab_new_nb_conges_all');
-    $tab_calcul_proportionnel = getpost_variable('tab_calcul_proportionnel');
+    $tab_calcul_proportionnel = getpost_variable('tab_calcul_proportionnel', array());
     $tab_new_comment_all = getpost_variable('tab_new_comment_all');
     $choix_groupe = getpost_variable('choix_groupe');
 

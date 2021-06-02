@@ -482,7 +482,7 @@ class Fonctions
 
             // AFFICHAGE TABLEAU
             $return .= '<form action="' . $PHP_SELF . '?onglet=traite_user" method="POST">';
-            $return .= '<table cellpadding="2" class="tablo">';
+            $return .= '<table cellpadding="2" class="table table-hover table-responsive table-condensed table-striped">';
             $return .= '<thead>';
             $return .= '<tr>';
             $return .= '<th>';
@@ -507,8 +507,8 @@ class Fonctions
             $i = true;
             $tab_checkbox=array();
             while ($resultat3 = $ReqLog3->fetch_array() ) {
-                $sql_date_deb           = eng_date_to_fr($resultat3["p_date_deb"]) ;
-                $sql_date_fin           = eng_date_to_fr($resultat3["p_date_fin"]) ;
+                $sql_date_deb           = $resultat3["p_date_deb"];
+                $sql_date_fin           = $resultat3["p_date_fin"];
                 $sql_demi_jour_deb      = $resultat3["p_demi_jour_deb"] ;
                 $sql_demi_jour_fin      = $resultat3["p_demi_jour_fin"] ;
 
@@ -522,17 +522,9 @@ class Fonctions
                 $sql_p_date_traitement  = $resultat3["p_date_traitement"];
                 $sql_num                = $resultat3["p_num"] ;
 
-                if ($sql_demi_jour_deb=="am") {
-                    $demi_j_deb =  _('divers_am_short') ;
-                } else {
-                    $demi_j_deb =  _('divers_pm_short') ;
-                }
-
-                if ($sql_demi_jour_fin=="am") {
-                    $demi_j_fin =  _('divers_am_short') ;
-                } else {
-                    $demi_j_fin =  _('divers_pm_short') ;
-                }
+                
+                $demi_j_deb = ($sql_demi_jour_deb == "am") ? 'matin' : 'après-midi';
+                $demi_j_fin = ($sql_demi_jour_fin == "am") ? 'matin' : 'après-midi';
 
                 if (($sql_etat=="annul") || ($sql_etat=="refus") || ($sql_etat=="ajout")) {
                     $casecocher1="";
@@ -553,8 +545,8 @@ class Fonctions
                 }
 
                 $return .= '<tr class="' . ($i ? 'i' : 'p') . '">';
-                $return .= '<td>' . $sql_date_deb . '_' . $demi_j_deb . '</td>';
-                $return .= '<td>' . $sql_date_fin . '_' . $demi_j_fin . '</td>';
+                $return .= '<td>' . \App\Helpers\Formatter::dateIso2Fr($sql_date_deb) . ' <span class="demi">' . schars($demi_j_deb) . '</span></td>';
+                $return .= '<td>' . \App\Helpers\Formatter::dateIso2Fr($sql_date_fin) . ' <span class="demi">' . schars($demi_j_fin) . '</span></td>';
                 $return .= '<td>' . $sql_nb_jours . '</td>';
                 $return .= '<td>' . $sql_commentaire . '</td>';
                 $return .= '<td>' . $tab_types_abs[$sql_type]['libelle'] . '</td>';

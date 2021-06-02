@@ -1925,6 +1925,9 @@ msgstr "Refusé"
 msgid "statut_annul"
 msgstr "Annulé"
 
+msgid "statut_ajout"
+msgstr "Ajout"
+
 msgid "statut_inconnu"
 msgstr "Inconnu"
 

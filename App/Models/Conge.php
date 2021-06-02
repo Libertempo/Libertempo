@@ -100,6 +100,9 @@ class Conge
             case static::STATUT_ANNUL:
                 $text = _('statut_annul');
                 break;
+            case static::STATUT_AJOUT:
+                $text = _('statut_ajout');
+                break;
 
             default:
                 $text = _('statut_inconnu');
