@@ -240,6 +240,14 @@ content-title {
     font-size: 18px;
     font-size: 1.8rem
 }
+
+.progress-label {
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
 #main-content.traite_user .calendar-nav {
     margin: 0;
     padding: 0;

@@ -27,6 +27,7 @@ init_tab_jours_feries();
 
 $canAskConge = $config->canUserSaisieDemande() || $config->canUserSaisieMission();
 $titre = _('user_liste_conge_titre');
+$titreTB = ('Récapitulatif');
 $params = $champsSql + [
     'p_login' => $_SESSION['userlogin'],
 ]; // champs par défaut écrasés par posté

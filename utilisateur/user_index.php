@@ -1,10 +1,11 @@
-<?php
+<?php declare(strict_types = 1);
 define('ROOT_PATH', '../');
 define('INCLUDE_PATH',     ROOT_PATH . 'includes/');
 require_once INCLUDE_PATH . 'define.php';
 require_once INCLUDE_PATH . 'session.php';
 
 $config = new \App\Libraries\Configuration(\includes\SQL::singleton());
+$baseURIApi = $config->getUrlAccueil() . '/api/';
 
 // SERVER
 $PHP_SELF = filter_var($_SERVER['PHP_SELF'], FILTER_SANITIZE_URL);
@@ -41,16 +42,6 @@ if ( !isset($onglets[ $onglet ]) && !in_array($onglet, array('modif_demande','su
 /*********************************/
 
 header_menu('', 'Libertempo : ' . _('user'));
-
-/*********************************/
-/*   AFFICHAGE DU RECAP ...    */
-/*********************************/
-
-echo "<div class=\"wrapper\">\n";
-echo '<h3>' . _('tableau_recap') . '</h3>';
-echo affiche_tableau_bilan_conges_user($_SESSION['userlogin']);
-echo "<hr/>\n";
-echo "</div>\n";
 
 /*********************************/
 /*   AFFICHAGE DE L'ONGLET ...    */
